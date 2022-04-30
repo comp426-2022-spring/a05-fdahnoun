@@ -8,7 +8,7 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 const morgan = require('morgan')
-const db = require('./database.js')
+const db = require('./src/services/database.js')
 const arguments = require('minimist')(process.argv.slice(2))
 
 // app.use(express.urlencoded({ extended: true}));
