@@ -32,19 +32,19 @@ async function flipCoins(event) {
 	event.preventDefault();
 // Build up the endpoint URL for coins
 	const endpointCoins = "app/flip/coins/"
-	const url = document.baseURI+endpointCoins
-// This extracts the data object from the form so we can run it through the FormData API
-	const formEvent = event.currentTarget
-// Give the data to FormData and wait for a response or log an error to console.
+	var url = document.baseURI+endpointCoins
+// Extracts data from current target and puts into eventForm
+	var eventForm = event.currentTarget
+// Give the data to FormData and then do await and fetch
 	try {
-		const formData = new FormData(formEvent);
+		const formData = new FormData(eventForm);
 // Hand the form data off to the function that is actually going to interact with the API.
-		const flips = await sendFlips({ url, formData });
+		const flipsAwait = await sendFlips({ url, formData });
 // Process the response and manipulate some elements in div#multi.
-		console.log(flips);
+		console.log(flipsAwait);
 // Present the summary information.
-		document.getElementById("heads").innerHTML = "Heads: "+flips.summary.heads;
-		document.getElementById("tails").innerHTML = "Tails: "+flips.summary.tails;
+		document.getElementById("heads").innerHTML = "Heads: "+flipsAwait.summary.heads;
+		document.getElementById("tails").innerHTML = "Tails: "+flipsAwait.summary.tails;
 // This calls a function what will make a list of coin images based on the array of coin flip results.
 // See below for coinList() function.
     document.getElementById("coinlist").innerHTML = coinList(flips.raw);
