@@ -21,19 +21,18 @@ async function flipCoin() {
 				    document.getElementById("quarter").setAttribute("src", "assets/img/"+result.flip+".png");
 				  });
   };
-// Flip multiple coins and show coin images in table as well as summary results
-// Enter number and press button to activate coin flip series
-// The flip many coins form in div#multi 
-const coins = document.getElementById("coins")
+// Flip multiple coins and show coin images in summary table
+// Enter number and press button to start process
+const coinsGetElement = document.getElementById("coins")
 // Add event listener for coins form in div#multi
-coins.addEventListener("submit", flipCoins)
+coinsGetElement.addEventListener("submit", flipCoins)
 // Create the submit handler that will run when the submit button ("Flip 'em!) is pressed.
 async function flipCoins(event) {
-// Because we are using an event, we need to remove the default browser event, which is a reload.
+// remove the default browser
 	event.preventDefault();
-// Build up the endpoint URL
-	const endpoint = "app/flip/coins/"
-	const url = document.baseURI+endpoint
+// Build up the endpoint URL for coins
+	const endpointCoins = "app/flip/coins/"
+	const url = document.baseURI+endpointCoins
 // This extracts the data object from the form so we can run it through the FormData API
 	const formEvent = event.currentTarget
 // Give the data to FormData and wait for a response or log an error to console.
