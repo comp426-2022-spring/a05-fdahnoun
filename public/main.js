@@ -45,9 +45,8 @@ async function flipCoins(event) {
 // Present the summary information.
 		document.getElementById("heads").innerHTML = "Heads: "+flipsAwait.summary.heads;
 		document.getElementById("tails").innerHTML = "Tails: "+flipsAwait.summary.tails;
-// This calls a function what will make a list of coin images based on the array of coin flip results.
-// See below for coinList() function.
-    document.getElementById("coinlist").innerHTML = coinList(flips.raw);
+
+    document.getElementById("coinlist").innerHTML = coinList(flipsAwait.raw);
 	} catch (error) {
 		console.log(error);
 	}
