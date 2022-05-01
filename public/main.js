@@ -1,20 +1,13 @@
-// Focus div based on nav button click
-
-// Flip one coin and show coin image to match result when button clicked
-
-// Flip multiple coins and show coin images in table as well as summary results
-// Enter number and press button to activate coin flip series
-
-// Guess a flip by clicking either heads or tails button
-const coin = document.getElementById("coin")
-// Add event listener for coin button in div#single
-coin.addEventListener("click", flipCoin)
-// Set up an asynchronous function so that it will await a response.
+// either heads or tails
+const coinElement = document.getElementById("coin")
+// Add event listener to coin
+coinElement.addEventListener("click", flipCoin)
+// asynchronous function to replicate flip coin
 async function flipCoin() {
 // Build up the endpoint URL
-    const endpoint = "app/flip/"
+    var endpoint = "app/flip/"
 // DOM knows what the URI is so that we don't have to hard code it.
-    const url = document.baseURI+endpoint
+    var url = document.baseURI+endpoint
 // This sends a GET request to the API endpoint and waits for a response
     await fetch(url)
 // This receives the response as JSON
