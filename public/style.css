@@ -1,15 +1,25 @@
 div.hidden {
   display: none;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: dotted;
 }
 
 div.active {
   border: 5px solid red;
+  color: blue;
+  width: 100px;
+  line-height: normal;
 }
 
 img.bigcoin {
   width: 50px;
+  color: blue;
+  line-height: normal;
 }
 
 img.smallcoin {
   width: 50px;
+  color: blue;
+  background-color: red;
 }
